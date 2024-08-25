@@ -86,7 +86,7 @@ function Form() {
     <div className='flex items-center justify-center flex-col min-h-screen bg-[#DFF1E7]'>
         {successMessage&&(
             <>
-            <div className=' flex flex-col bg-[#2B4246] px-6 py-5 rounded-lg '>
+            <div className=' flex flex-col max-md:rounded-none mt-10 bg-[#2B4246] px-6 py-5 rounded-lg '>
             <div className='flex '>
                 <img src={CheckIcon} alt="" />
                 <span className='ml-2 text-white font-karla'>Message Sent !</span>
@@ -96,14 +96,14 @@ function Form() {
            </div>
             
             </div>
-            
+             
             </>
         )}
         <div className='flex flex-col'>
-            <div className='flex flex-col px-7 py-4 bg-white rounded-md'>
-                <h1 className='font-karla font-bold text-[#2B4246] text-2xl'>Contact Us</h1>
-                <div className='flex gap-x-4 mt-5'>
-                    <div className='flex flex-col'>
+            <div className='flex flex-col max-md:px-5 max-md:w-full max-md:py-3 px-7 py-4 bg-white rounded-lg w-full max-md:min-h-screen my-5'>
+                <h1 className='font-karla font-bold text-[#2B4246] text-2xl flex'>Contact Us</h1>
+                <div className='flex max-md:flex-col max-md:gap-y-5 gap-x-4 mt-5'>
+                    <div className='flex flex-col '>
                         <label htmlFor="firstname" className={`font-karla  ${firstNameError?'text-[#D73C3C]':'text-[#0C7D69]'}`}>First Name *</label>
                         <input 
                         type="text" 
@@ -150,7 +150,7 @@ function Form() {
                     )}
                 </div>
                 <span className={`mt-6 mb-3 font-karla text-[#0C7D69] ${queryError?'text-[#D73C3C]':''}`}>Query Type *</span>
-                <div className='flex gap-x-3 w-full'>
+                <div className='flex max-md:flex-col max-md:gap-y-2 gap-x-3 w-full'>
                     <div className='flex flex-col flex-1'>
                         <div className={`px-1 rounded-lg border-2 outline-none w-full ${selectedOption==='enquiry1'?'bg-[#DFF1E7] border-[#0C7D69]':'bg-white border-gray-300'}`}>
                         <Radio
@@ -213,7 +213,7 @@ function Form() {
                     id="message" 
                     value={message}
                     onChange={(e)=>setMessage(e.target.value)}
-                    className={`border-2 w-full min-h-20 outline-none px-3 py-2 font-karla resize-none rounded-lg  text-[#0C7D69] ${messageError?'border-[#D73C3C]':'hover:border-[#0C7D69] ease-in-out transition duration-200'}`}></textarea>
+                    className={`border-2 max-md:min-h-44 w-full min-h-20 outline-none px-3 py-2 font-karla resize-none rounded-lg  text-[#0C7D69] ${messageError?'border-[#D73C3C]':'hover:border-[#0C7D69] ease-in-out transition duration-200'}`}></textarea>
                     {messageError&&(
                         <>
                         <span className='font-karla text-sm text-[#D73C3C]'>This Field Is required</span>
